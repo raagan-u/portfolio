@@ -10,6 +10,7 @@ const displayText = ref('');
 const baseText = 'developer';
 const showGif = ref(false);
 const showCover = ref(true);
+const showSubtext = ref(false);
 const audioContext = ref(null);
 const backgroundAudio = ref(null);
 
@@ -22,12 +23,8 @@ let deletingSpeed = 100;
 const steps = [
   { action: 'type', text: '_frontend', startFrom: 0 },
   { action: 'delete', text: 'frontend', startFrom: 0 },
-  { action: 'type', text: '_backend', startFrom: 0 },
-  { action: 'delete', text: 'backend', startFrom: 0 },
-  { action: 'type', text: '_web2', startFrom: 0 },
-  { action: 'delete', text: 'web2', startFrom: 0 },
-  { action: 'type', text: '_web3', startFrom: 0 },
-  { action: 'delete', text: 'web3', startFrom: 0 },
+  { action: 'type', text: '_backend & web3', startFrom: 0 },
+  { action: 'delete', text: 'backend & web3', startFrom: 0 },
   { action: 'type', text: ' :)', startFrom: 0 }
 ];
 
@@ -81,7 +78,8 @@ const handleUserInteraction = () => {
 
 const typeText = () => {
   if (currentStep >= steps.length) {
-    // Animation complete - stop at "developer :)"
+    // Animation complete - show subtext
+    showSubtext.value = true;
     return;
   }
 
@@ -177,6 +175,11 @@ onMounted(() => {
         <h1 class="text-6xl dotgothic16-regular tracking-wider">
           {{ displayText }}<span class="animate-pulse">_</span>
         </h1>
+        
+        <!-- Subtext that appears after animation -->
+        <div v-if="showSubtext" class="absolute bottom-0 right-0 transform translate-x-full translate-y-full mt-4">
+          <p class="text-lg dotgothic16-regular opacity-80">if it's code, i'll build it</p>
+        </div>
         
         <!-- GIF that appears when frontend is typed -->
         <div v-if="showGif" class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-full ml-8">
