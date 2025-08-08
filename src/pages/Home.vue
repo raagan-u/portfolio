@@ -6,44 +6,57 @@ import About from './About.vue';
 </script>
 
 <template>
-  <div class="min-h-screen bg-white text-black relative">
-    <!-- Top Section -->
-    <div class="flex justify-between items-start p-8">
-      <!-- Logo in top-left -->
-      <div class="text-2xl font-bold">
-        raagan_u.
+  <div class="min-h-screen bg-white text-black relative w-full">
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative">
+      <!-- Top Section -->
+      <div class="absolute top-8 left-8 right-8 flex justify-between items-start">
+        <!-- Logo in top-left -->
+        <div class="text-2xl font-bold">
+          raagan_u.
+        </div>
       </div>
-    </div>
 
-    <!-- Main Content Area -->
-    <div class="flex min-h-screen">
-      <!-- Left Navigation -->
-      <nav class="w-64 p-8 flex flex-col justify-center">
+      <!-- Left Navigation (only in home section) -->
+      <nav class="absolute left-8 top-1/2 transform -translate-y-1/2">
         <div class="flex flex-col space-y-8">
-          <RouterLink to="/" class="text-lg hover:underline cursor-pointer">home</RouterLink>
-          <RouterLink to="projects" class="text-lg hover:underline cursor-pointer">projects</RouterLink>
-          <RouterLink to="/about" class="text-lg hover:underline cursor-pointer">about me</RouterLink>
-          <RouterLink to="/contact" class="text-lg hover:underline cursor-pointer">contact me</RouterLink>
+          <a href="#home" class="text-lg hover:underline cursor-pointer">home</a>
+          <a href="#projects" class="text-lg hover:underline cursor-pointer">projects</a>
+          <a href="#about" class="text-lg hover:underline cursor-pointer">about me</a>
+          <a href="#contact" class="text-lg hover:underline cursor-pointer">contact me</a>
         </div>
       </nav>
 
       <!-- Center Content -->
-      <div class="flex-1 flex items-center justify-center">
-        <div class="text-center">
-          <h1 class="text-6xl font-mono tracking-wider">
-            front-end. web (developer)
-            <span class="animate-pulse">_</span>
-          </h1>
-        </div>
+      <div class="text-center">
+        <h1 class="text-6xl font-mono tracking-wider">
+          front-end. web (developer)
+          <span class="animate-pulse">_</span>
+        </h1>
       </div>
 
-      <!-- Right Side -->
-      <div class="w-64 p-8 flex flex-col justify-end">
+      <!-- Right Side - Dark Mode (only in home section) -->
+      <div class="absolute right-8 bottom-8">
         <div class="text-lg cursor-pointer hover:underline">
           dark mode.
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="min-h-screen p-8">
+      <Projects />
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="min-h-screen p-8">
+      <About />
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="min-h-screen p-8">
+      <Contact />
+    </section>
   </div>
 </template>
 
@@ -59,5 +72,15 @@ import About from './About.vue';
   50% {
     opacity: 0;
   }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure sections take full viewport height */
+section {
+  scroll-margin-top: 0;
 }
 </style>
