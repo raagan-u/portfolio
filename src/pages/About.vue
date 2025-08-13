@@ -67,7 +67,6 @@
           <img src="../assets/current/solidity.ico" alt="Solidity" class="tech-logo">
           <img src="../assets/current/icons8-bitcoin-500.png" alt="Bitcoin" class="tech-logo">
           <img src="../assets/current/postgres.png" alt="PostgreSQL" class="tech-logo">
-          <img src="../assets/current/merry.png" alt="Merry" class="tech-logo">
         </div>
       </div>
     </div>
