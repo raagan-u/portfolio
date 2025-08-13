@@ -17,7 +17,7 @@
           <h2 class="name">Raagan U</h2>
           <p class="bio">
             Yeah, My name is Raagan. You can also call me  potential candidate for your next project :)<br></br>
-            I code, and I solve problems through code.
+            I code, and I solve problems through code. You can also count on me for DB optimizations, devops.
           </p>
           <div class="social-links">
             <a href="https://www.instagram.com/_raagan" class="social-link"><img src="../assets/social/instagram.png" alt="Instagram" class="social-icon"></img></a>
