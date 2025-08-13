@@ -9,7 +9,21 @@ const projects = [
     tech: ["Solidity"],
     github: "https://github.com/raagan-u/particle-partisync",
     live: "#",
-    featured: true
+    featured: true,
+    contracts: [
+      {
+        name: "Particle Token",
+        address: "0x733E0CF1fFcBdB93f456e1317Ec8306F8acea404",
+        network: "Arbitrum Sepolia",
+        explorer: "https://sepolia.arbiscan.io/address/"
+      },
+      {
+        name: "PartiSync",
+        address: "0x4fe06c9d281F66a2D9849d60ACa9ef4c506B4d7A",
+        network: "Arbitrum Sepolia",
+        explorer: "https://sepolia.arbiscan.io/address/"
+      }
+    ]
   },
   {
     id: 2,
@@ -81,6 +95,28 @@ const contributions = [
                 GitHub
               </a>
             </div>
+            
+            <!-- Contract Addresses -->
+            <div v-if="project.contracts" class="contract-addresses">
+              <h4 class="contract-title">Deployed Contracts:</h4>
+              <div class="contract-list">
+                <div 
+                  v-for="contract in project.contracts" 
+                  :key="contract.name" 
+                  class="contract-item"
+                >
+                  <span class="contract-name">{{ contract.name }}:</span>
+                  <a 
+                    :href="`${contract.explorer}${contract.address}`" 
+                    class="contract-link" 
+                    target="_blank"
+                  >
+                    {{ contract.address }}
+                  </a>
+                  <span class="contract-network">({{ contract.network }})</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -111,6 +147,28 @@ const contributions = [
               <a :href="project.github" class="project-link github" target="_blank">
                 GitHub
               </a>
+            </div>
+            
+            <!-- Contract Addresses -->
+            <div v-if="project.contracts" class="contract-addresses">
+              <h4 class="contract-title">Deployed Contracts:</h4>
+              <div class="contract-list">
+                <div 
+                  v-for="contract in project.contracts" 
+                  :key="contract.name" 
+                  class="contract-item"
+                >
+                  <span class="contract-name">{{ contract.name }}:</span>
+                  <a 
+                    :href="`${contract.explorer}${contract.address}`" 
+                    class="contract-link" 
+                    target="_blank"
+                  >
+                    {{ contract.address }}
+                  </a>
+                  <span class="contract-network">({{ contract.network }})</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -315,6 +373,60 @@ const contributions = [
 .project-link.live:hover {
   background: #000;
   color: #fff;
+}
+
+.contract-addresses {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.contract-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.contract-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.contract-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.contract-name {
+  font-weight: 500;
+  color: #666;
+  min-width: fit-content;
+}
+
+.contract-link {
+  color: #007bff;
+  text-decoration: none;
+  font-family: monospace;
+  background: #f8f9fa;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+}
+
+.contract-link:hover {
+  background: #e9ecef;
+  text-decoration: underline;
+}
+
+.contract-network {
+  color: #999;
+  font-size: 0.75rem;
 }
 
 @media (max-width: 768px) {
