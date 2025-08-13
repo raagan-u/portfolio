@@ -16,7 +16,7 @@
         <div class="profile-info">
           <h2 class="name">Raagan U</h2>
           <p class="bio">
-            Yeah, My name is Raagan. You can also call me  potential candidate for your next project :)<br></br>
+            The name's Raagan. You can also call me a potential candidate for your next project :)<br></br>
             I code, and I solve problems through code. You can also count on me for DB optimizations, devops.
           </p>
           <div class="social-links">
