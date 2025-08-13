@@ -16,7 +16,8 @@
         <div class="profile-info">
           <h2 class="name">Raagan U</h2>
           <p class="bio">
-            I code
+            Yeah, My name is Raagan. You can also call me as potential candidate for your next project :)<br></br>
+            I code, and I solve problems through code.
           </p>
           <div class="social-links">
             <a href="https://www.instagram.com/_raagan" class="social-link">INSTAGRAM</a>
@@ -33,17 +34,19 @@
       <div class="skill-card">
         <div class="skill-icon"></div>
         <h3 class="skill-title">Backend</h3>
-        <p class="skill-description">Backend development with Node.js, Express, and MongoDB.</p>
+        <p class="skill-description">Backend development with Rust, Go, etc.</p>
       </div>
       <div class="skill-card">
         <div class="skill-icon"></div>
-        <h3 class="skill-title">Solidity</h3>
-        <p class="skill-description">Smart contract development with Solidity.</p>
+        <h3 class="skill-title">Blockchain</h3>
+        <p class="skill-description">Solidity, Bitcoin scripts, Lightning Network.</p>
       </div>
       <div class="skill-card">
         <div class="skill-icon"></div>
-        <h3 class="skill-title">Bitcoin</h3>
-        <p class="skill-description">Bitcoin scripts.</p>
+        <h3 class="skill-title">Adaptive Learning</h3>
+        <p class="skill-description">
+          Give me a topic and a deadline — I’ll learn it fast, then I'll get better at it every day.
+        </p>
       </div>
     </div>
 

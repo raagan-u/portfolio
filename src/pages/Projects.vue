@@ -80,9 +80,6 @@ const contributions = [
               <a :href="project.github" class="project-link github" target="_blank">
                 GitHub
               </a>
-              <a :href="project.live" class="project-link live" target="_blank">
-                Live Demo
-              </a>
             </div>
           </div>
         </div>
@@ -114,9 +111,6 @@ const contributions = [
               <a :href="project.github" class="project-link github" target="_blank">
                 GitHub
               </a>
-              <a :href="project.live" class="project-link live" target="_blank">
-                Live Demo
-              </a>
             </div>
           </div>
         </div>
@@ -147,9 +141,6 @@ const contributions = [
             <div class="project-links">
               <a :href="contribution.github" class="project-link github" target="_blank">
                 GitHub
-              </a>
-              <a :href="contribution.live" class="project-link live" target="_blank">
-                Live Demo
               </a>
             </div>
           </div>
