@@ -161,7 +161,7 @@ const contributions = [
                   <span class="contract-name">{{ contract.name }}:</span>
                   <a 
                     :href="`${contract.explorer}${contract.address}`" 
-                    class="contract-link" 
+                    class="contract-link overflow-x-hidden" 
                     target="_blank"
                   >
                     {{ contract.address }}
