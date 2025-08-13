@@ -151,7 +151,7 @@ onMounted(() => {
          tabindex="0">
       <div class="text-center text-white">
         <h1 class="text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
-        <p class="text-xl mb-8">Click anywhere or press Enter to begin</p>
+        <p class="text-xl mb-8">Click anywhere to begin</p>
       </div>
     </div>
 
