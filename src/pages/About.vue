@@ -20,10 +20,10 @@
             I code, and I solve problems through code.
           </p>
           <div class="social-links">
-            <a href="https://www.instagram.com/_raagan" class="social-link">INSTAGRAM</a>
-            <a href="https://github.com/raagan-u" class="social-link">GITHUB</a>
-            <a href="mailto:raaganuthayaargn@gmail.com" class="social-link">EMAIL</a>
-            <a href="https://in.linkedin.com/in/raagan-u-01a170203" class="social-link">LINKEDIN</a>
+            <a href="https://www.instagram.com/_raagan" class="social-link"><img src="../assets/social/instagram.png" alt="Instagram" class="social-icon"></img></a>
+            <a href="https://github.com/raagan-u" class="social-link"><img src="../assets/social/github.png" alt="Github" class="social-icon"></img></a>
+            <a href="mailto:raaganuthayaargn@gmail.com" class="social-link"><img src="../assets/social/gmail.png" alt="Email" class="social-icon"></img></a>
+            <a href="https://in.linkedin.com/in/raagan-u-01a170203" class="social-link"><img src="../assets/social/linkedin.png" alt="Linkedin" class="social-icon"></img></a>
           </div>
         </div>
       </div>
@@ -213,6 +213,8 @@
   font-weight: 500;
   font-size: 0.9rem;
   transition: opacity 0.2s;
+  height: 40px;
+  width: 40px;
 }
 
 .social-link:hover {
