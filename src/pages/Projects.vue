@@ -30,18 +30,42 @@ const projects = [
   },
   {
     id: 2,
-    title: "Garden-TUI",
-    description: "A TUI for the Garden Finance API.",
-    tech: ["Rust", "Bitcoin", "Ratatui", "Alloy"],
-    github: "https://github.com/raagan-u/garden-tui",
+    title: "Seri Protocol",
+    description: "Permissionless price discovery on Solana. Any tokenized asset enters an auction, the market finds the fair price, liquidity bootstraps automatically. No bots, no insiders. Inspired by Uniswap's CCA, built natively for Solana.",
+    tech: ["Anchor", "Solana", "Rust", "Vite", "Vue"],
+    github: "https://github.com/raagan-u/seri_protocol",
     featured: true
   },
   {
     id: 3,
+    title: "zAppIt",
+    description: "zAppIt is a decentralized finance (DeFi) application that enables seamless cross-chain payments and fund requests through the simplicity of NFC taps. Beyond payments, zAppIt unlocks anonymous user networking powered by zero-knowledge proofs, paving the way for decentralized marketplaces, auctions, and privacy-preserving social interactions.",
+    tech: ["Typescript", "React Native", "Expo", "HCE", "NFC", "ethers.js"],
+    github: "https://github.com/raagan-u/zAppIt",
+    featured: true
+  },
+  {
+    id: 4,
+    title: "JavaCard Playground",
+    description: "A playground for experimenting with JavaCard Programs. In this SECP256k1 signing is implemented for the javacard to sign digests",
+    tech: ["Java", "JavaCard"],
+    github: "https://github.com/raagan-u/javacardplayground",
+    featured: true
+  },
+  {
+    id: 5,
     title: "Wallet-rs",
     description: "A blockchain wallet in rust.",
     tech: ["Rust", "Bitcoin", "Alloy"],
     github: "https://github.com/raagan-u/wallet-rs",
+    featured: false
+  },
+  {
+    id: 6,
+    title: "Garden-TUI",
+    description: "A TUI for the Garden Finance API.",
+    tech: ["Rust", "Bitcoin", "Ratatui", "Alloy"],
+    github: "https://github.com/raagan-u/garden-tui",
     featured: false
   }
 ];
@@ -53,6 +77,14 @@ const contributions = [
     description: "multi-blockchain testing environment",
     tech: ["Docker", "Go"],
     github: "https://github.com/raagan-u/merry",
+    featured: false
+  },
+  {
+    id: 2,
+    title: "Blockchain",
+    description: "Clients written in golang for interacting with blockchain nodes. Bitcoin Batcher Wallet",
+    tech: ["Go", "Bitcoin", "Geth"],
+    github: "https://github.com/hashiraio/blockchain",
     featured: false
   }
 ];
