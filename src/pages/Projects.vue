@@ -7,6 +7,15 @@ const { displayed, done } = useTypeOnScroll(headingRef, '_projects', { speed: 80
 
 const projects = [
   {
+    id: 7,
+    title: "Twelvestrings",
+    description: "Browser-based guitar practice with live pitch detection, an interactive fretboard, and real-time note sharing over WebSockets. Built with Rust and React; self-hosted on a ThinkPad using Docker Compose, Cloudflare Tunnel, and GitHub Actions image builds.",
+    tech: ["Rust", "React", "TypeScript", "Web Audio", "WebSockets", "Docker", "Cloudflare", "GitHub Actions"],
+    github: "https://github.com/raagan-u/twelvestrings",
+    live: "https://twelvestrings.xyz",
+    featured: true
+  },
+  {
     id: 1,
     title: "Particle-PartiSync",
     description: "Particle - an ERC20 with blacklisting and whitelisting, PartiSync - a subscription smart contract",
@@ -115,6 +124,9 @@ const contributions = [
               </span>
             </div>
             <div class="project-links">
+              <a v-if="project.live" :href="project.live" class="project-link" target="_blank" rel="noopener noreferrer">
+                &gt; live app
+              </a>
               <a :href="project.github" class="project-link" target="_blank">
                 &gt; github
               </a>
@@ -158,6 +170,9 @@ const contributions = [
               </span>
             </div>
             <div class="project-links">
+              <a v-if="project.live" :href="project.live" class="project-link" target="_blank" rel="noopener noreferrer">
+                &gt; live app
+              </a>
               <a :href="project.github" class="project-link" target="_blank">
                 &gt; github
               </a>
