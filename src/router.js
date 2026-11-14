@@ -6,9 +6,9 @@ import FromH from './pages/FromH.vue';
 
 const routes = [
   { path: '/', component: Home },
+  { path: '/fromh', component: FromH },
   { path: '/about', component: About },
   { path: '/projects', component: Projects },
-  { path: '/fromh', component: FromH },
 ];
 
 const router = createRouter({
