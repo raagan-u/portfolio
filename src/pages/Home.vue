@@ -182,6 +182,7 @@ onMounted(() => {
           <a href="#home" class="text-lg hover:underline cursor-pointer -rotate-90">home</a>
           <a href="#about" class="text-lg hover:underline cursor-pointer -rotate-90">about me</a>
           <a href="#projects" class="text-lg hover:underline cursor-pointer -rotate-90">projects</a>
+          <RouterLink to="/fromh" class="text-lg hover:underline cursor-pointer -rotate-90">FroMH</RouterLink>
         </div>
       </nav>
 
@@ -191,6 +192,7 @@ onMounted(() => {
           <a href="#home" class="text-sm hover:underline cursor-pointer">home</a>
           <a href="#about" class="text-sm hover:underline cursor-pointer">about</a>
           <a href="#projects" class="text-sm hover:underline cursor-pointer">projects</a>
+          <RouterLink to="/fromh" class="text-sm hover:underline cursor-pointer">FroMH</RouterLink>
         </div>
       </nav>
 
