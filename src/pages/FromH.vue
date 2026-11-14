@@ -132,22 +132,23 @@ onUnmounted(() => {
           <span class="status status--beta"><i></i> Live · Android beta</span>
         </div>
 
-        <div class="product-visual pact-visual" aria-label="ctrld app card showing a spending pact status">
+        <div class="product-visual pact-visual" aria-label="Animated interpretation of the ctrld app opening splash">
           <div class="ctrld-rings" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="pact-paper">
             <div class="pact-head">
               <span>The app opens with intent</span>
               <span>01 — 03</span>
             </div>
-            <div class="ctrld-logo">ctrld<span>.</span></div>
-            <p class="ctrld-pronunciation">/kənˈtroʊld/ <i>·</i> kuhn-TROHLD</p>
-            <p class="ctrld-definition"><b>adj.</b> a wallet that <em>actually</em><br />helps you stick to your budget.</p>
+            <div class="ctrld-splash">
+              <div class="ctrld-logo" aria-label="ctrld">
+                <span style="--letter: 0">c</span><span style="--letter: 1">t</span><span style="--letter: 2">r</span><span style="--letter: 3">l</span><span style="--letter: 4">d</span><i aria-hidden="true">_</i>
+              </div>
+              <div class="ctrld-splash-entry">
+                <p class="ctrld-pronunciation">/kənˈtroʊld/ <i>·</i> kuhn-TROHLD</p>
+                <p class="ctrld-definition"><b>adj.</b> a wallet that <em>actually</em><br />helps you stick to your budget.</p>
+              </div>
+            </div>
             <div class="ctrld-steps">Type. Define. Commit.</div>
-          </div>
-          <div class="pact-status-card">
-            <small>Pact status</small>
-            <strong>14 days kept</strong>
-            <i><span></span></i>
           </div>
         </div>
 
@@ -640,42 +641,22 @@ onUnmounted(() => {
 .ctrld-rings i:nth-child(2) { inset: 27%; }
 .ctrld-rings i:nth-child(3) { inset: 42%; }
 
-.pact-status-card {
-  position: absolute;
-  z-index: 2;
-  top: 7%;
-  right: 5%;
-  width: 190px;
-  padding: 19px 20px 17px;
-  color: #182235;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 15px 35px rgba(9, 32, 88, 0.24);
-  transform: rotate(-5deg);
-}
-
-.pact-status-card small { display: block; margin-bottom: 7px; color: #687289; font-size: 0.5rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
-.pact-status-card strong { display: block; font-size: 1rem; }
-.pact-status-card > i { display: block; height: 4px; margin-top: 13px; overflow: hidden; border-radius: 10px; background: #dbe5ff; }
-.pact-status-card > i span { display: block; width: 72%; height: 100%; border-radius: inherit; background: #25c995; }
-
-.pact-visual:hover .pact-status-card { transform: rotate(-2deg) translateY(-4px); }
-
-.pact-status-card,
 .pact-paper { transition: transform 350ms ease; }
 
 .pact-paper {
   position: relative;
   z-index: 1;
-  width: min(86%, 390px);
-  min-height: 490px;
-  padding: 34px 32px 38px;
+  width: auto;
+  height: min(88%, 540px);
+  aspect-ratio: 9 / 18.5;
+  padding: 27px 23px 31px;
   overflow: hidden;
   color: #182235;
   background: #fff;
-  border-radius: 26px;
-  box-shadow: 18px 24px 0 rgba(9, 32, 88, 0.2);
-  transform: rotate(1.4deg) translateY(25px);
+  border: 4px solid #182235;
+  border-radius: 38px;
+  box-shadow: 15px 19px 0 rgba(9, 32, 88, 0.22);
+  transform: rotate(1.2deg);
 }
 
 .pact-paper::after {
@@ -690,35 +671,82 @@ onUnmounted(() => {
   box-shadow: 0 0 0 50px #eff3ff;
 }
 
-.pact-visual:hover .pact-paper { transform: rotate(0deg) translateY(18px); }
+.pact-visual:hover .pact-paper { transform: rotate(0deg) translateY(-4px); }
 
 .pact-head {
   display: flex;
   justify-content: space-between;
   color: #687289;
-  font-size: 0.5rem;
+  font-size: 0.42rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
+.ctrld-splash {
+  position: relative;
+  z-index: 1;
+  min-height: 330px;
+}
+
 .ctrld-logo {
   position: relative;
   z-index: 1;
-  margin-top: 105px;
-  font-size: 3.75rem;
+  display: flex;
+  align-items: baseline;
+  margin-top: 74px;
+  font-size: 3rem;
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.08em;
+  animation: ctrld-word-shift 7.8s ease-in-out infinite;
 }
 
-.ctrld-logo span,
+.ctrld-logo span {
+  display: inline-block;
+  opacity: 0;
+  animation: ctrld-letter 7.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  animation-delay: calc(0.16s + (var(--letter) * 0.12s));
+}
+
+.ctrld-logo > i {
+  margin-left: 2px;
+  color: #1754eb;
+  font-size: 0.8em;
+  font-style: normal;
+  animation: ctrld-caret 0.7s steps(1, end) infinite;
+}
+
 .ctrld-definition em { color: #1754eb; font-style: normal; }
-.ctrld-pronunciation { position: relative; z-index: 1; margin-top: 12px; color: #687289; font-size: 0.62rem; font-weight: 500; }
+.ctrld-splash-entry { opacity: 0; animation: ctrld-entry 7.8s ease-in-out 1.05s infinite; }
+.ctrld-pronunciation { position: relative; z-index: 1; margin-top: 12px; color: #687289; font-size: 0.5rem; font-weight: 500; }
 .ctrld-pronunciation i { margin: 0 5px; font-style: normal; }
-.ctrld-definition { position: relative; z-index: 1; margin-top: 34px; font-size: 1rem; font-weight: 600; line-height: 1.25; }
-.ctrld-definition b { display: block; margin-bottom: 10px; color: #1754eb; font-size: 0.7rem; }
-.ctrld-steps { position: absolute; z-index: 1; left: 32px; bottom: 28px; color: #687289; font-size: 0.51rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
+.ctrld-definition { position: relative; z-index: 1; margin-top: 26px; font-size: 0.8rem; font-weight: 600; line-height: 1.28; }
+.ctrld-definition b { display: block; margin-bottom: 8px; color: #1754eb; font-size: 0.58rem; }
+.ctrld-steps { position: absolute; z-index: 1; left: 23px; bottom: 24px; color: #687289; font-size: 0.42rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
+
+@keyframes ctrld-letter {
+  0%, 2% { opacity: 0; transform: translateY(16px); }
+  8%, 79% { opacity: 1; transform: none; }
+  90%, 100% { opacity: 0; transform: translateY(-8px); }
+}
+
+@keyframes ctrld-word-shift {
+  0%, 14% { transform: translateY(88px) scale(1.05); }
+  26%, 80% { transform: none; }
+  92%, 100% { transform: translateY(-10px); }
+}
+
+@keyframes ctrld-entry {
+  0%, 7% { opacity: 0; transform: translateY(16px); }
+  17%, 73% { opacity: 1; transform: none; }
+  84%, 100% { opacity: 0; transform: translateY(-8px); }
+}
+
+@keyframes ctrld-caret {
+  0%, 48% { opacity: 1; }
+  49%, 100% { opacity: 0; }
+}
 
 .unknown-visual {
   display: grid;
@@ -847,12 +875,14 @@ onUnmounted(() => {
   .twelve-roman { font-size: 3.2rem; }
   .twelve-name strong { font-size: 1rem; }
   .twelve-name small { font-size: 0.42rem; }
-  .pact-paper { width: 88%; min-height: 390px; padding: 24px 21px 32px; }
-  .ctrld-logo { margin-top: 85px; font-size: 3.1rem; }
-  .ctrld-definition { margin-top: 27px; font-size: 0.86rem; }
-  .ctrld-steps { left: 21px; bottom: 20px; }
-  .pact-status-card { width: 152px; padding: 14px 15px 13px; }
-  .pact-status-card strong { font-size: 0.82rem; }
+  .pact-paper { width: auto; height: 390px; padding: 21px 18px 27px; border-radius: 31px; }
+  .pact-head { font-size: 0.34rem; }
+  .ctrld-splash { min-height: 255px; }
+  .ctrld-logo { margin-top: 58px; font-size: 2.45rem; }
+  .ctrld-pronunciation { font-size: 0.4rem; }
+  .ctrld-definition { margin-top: 20px; font-size: 0.66rem; }
+  .ctrld-definition b { margin-bottom: 6px; font-size: 0.48rem; }
+  .ctrld-steps { left: 18px; bottom: 19px; font-size: 0.34rem; }
   .sealed-card { aspect-ratio: 1.1; }
   .manifesto { padding: 90px 0 100px; }
   .manifesto blockquote { font-size: 3.6rem; }
@@ -864,6 +894,14 @@ onUnmounted(() => {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-mark svg { animation: none; }
+  .ctrld-logo,
+  .ctrld-logo span,
+  .ctrld-logo > i,
+  .ctrld-splash-entry { animation: none; }
+  .ctrld-logo { transform: none; }
+  .ctrld-logo span,
+  .ctrld-splash-entry { opacity: 1; transform: none; }
+  .ctrld-logo > i { opacity: 0; }
   [data-reveal] { opacity: 1; transform: none; transition: none; }
   * { scroll-behavior: auto !important; }
 }
