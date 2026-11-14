@@ -98,15 +98,19 @@ onUnmounted(() => {
           <span class="status"><i></i> Live</span>
         </div>
 
-        <div class="product-visual strings-visual" aria-label="Abstract illustration of twelve guitar strings">
+        <div class="product-visual strings-visual" aria-label="TwelveStrings wordmark over an abstract guitar fretboard">
           <div class="strings">
             <i v-for="n in 12" :key="n"></i>
           </div>
-          <div class="sound-hole">
-            <span>12</span>
-            <small>strings</small>
+          <div class="twelve-brand">
+            <span class="twelve-roman">XII</span>
+            <span class="twelve-name">
+              <strong>twelvestrings</strong>
+              <small>A little more play.</small>
+            </span>
           </div>
-          <p>two people / six strings each</p>
+          <div class="riff-meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <p><span>&#10035;</span> two people / six strings each</p>
         </div>
 
         <div class="product-copy">
@@ -125,23 +129,25 @@ onUnmounted(() => {
       <article class="product product--ctrld" data-reveal>
         <div class="product-meta">
           <span>FMH—02</span>
-          <span class="status status--building"><i></i> In development</span>
+          <span class="status status--beta"><i></i> Live · Android beta</span>
         </div>
 
-        <div class="product-visual pact-visual" aria-label="A spending pact represented as a personal ledger">
+        <div class="product-visual pact-visual" aria-label="ctrld app card showing a spending pact status">
+          <div class="ctrld-rings" aria-hidden="true"><i></i><i></i><i></i></div>
           <div class="pact-paper">
             <div class="pact-head">
-              <span>SPENDING PACT</span>
-              <span>No. 002</span>
+              <span>The app opens with intent</span>
+              <span>01 — 03</span>
             </div>
-            <p>I promise myself to pause before money moves.</p>
-            <dl>
-              <div><dt>Stake</dt><dd>Chosen by you</dd></div>
-              <div><dt>Witness</dt><dd>Someone you trust</dd></div>
-              <div><dt>Decision</dt><dd>Made with intention</dd></div>
-            </dl>
-            <div class="signature">signed, me</div>
-            <div class="pact-stamp">COMMITTED</div>
+            <div class="ctrld-logo">ctrld<span>.</span></div>
+            <p class="ctrld-pronunciation">/kənˈtroʊld/ <i>·</i> kuhn-TROHLD</p>
+            <p class="ctrld-definition"><b>adj.</b> a wallet that <em>actually</em><br />helps you stick to your budget.</p>
+            <div class="ctrld-steps">Type. Define. Commit.</div>
+          </div>
+          <div class="pact-status-card">
+            <small>Pact status</small>
+            <strong>14 days kept</strong>
+            <i><span></span></i>
           </div>
         </div>
 
@@ -483,7 +489,7 @@ onUnmounted(() => {
   box-shadow: 0 0 0 4px rgba(94, 103, 80, 0.14);
 }
 
-.status--building i { background: var(--red); box-shadow: 0 0 0 4px rgba(135, 61, 52, 0.13); }
+.status--beta i { background: #25c995; box-shadow: 0 0 0 4px rgba(37, 201, 149, 0.14); }
 .status--quiet i { background: var(--soft-ink); box-shadow: none; }
 
 .product-visual {
@@ -533,12 +539,15 @@ onUnmounted(() => {
 .strings-visual {
   display: grid;
   place-items: center;
-  background: #d9c5a7;
+  color: #e7e8df;
+  background-color: #1b1e1a;
+  background-image: linear-gradient(rgba(140, 152, 124, 0.2) 1px, transparent 1px);
+  background-size: 100% 68px;
 }
 
 .strings {
   position: absolute;
-  inset: 0 9%;
+  inset: 0 8%;
   display: flex;
   justify-content: space-between;
 }
@@ -546,7 +555,7 @@ onUnmounted(() => {
 .strings i {
   width: 1px;
   height: 100%;
-  background: rgba(33, 29, 24, 0.39);
+  background: rgba(140, 152, 124, 0.25);
   transform-origin: center;
   transition: transform 400ms ease;
 }
@@ -554,39 +563,60 @@ onUnmounted(() => {
 .strings-visual:hover .strings i:nth-child(3n + 1) { transform: scaleX(3); }
 .strings-visual:hover .strings i:nth-child(3n + 2) { transform: translateX(2px); }
 
-.sound-hole {
+.twelve-brand {
   z-index: 1;
-  width: 260px;
-  aspect-ratio: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(241, 234, 220, 0.42);
-  border-radius: 50%;
-  color: var(--paper);
-  background: #302821;
-  box-shadow: inset 0 0 0 18px #7b5038, inset 0 0 0 21px #b78c63;
+  gap: 19px;
+  padding: 30px 36px 27px;
+  border: 1px solid rgba(174, 188, 155, 0.28);
+  background: rgba(27, 30, 26, 0.9);
+  box-shadow: 14px 14px 0 rgba(0, 0, 0, 0.18);
 }
 
-.sound-hole span {
+.twelve-roman {
+  color: #f3a47e;
   font-family: 'Newsreader', Georgia, serif;
-  font-size: 5.2rem;
-  font-weight: 300;
-  line-height: 0.9;
+  font-size: 4.5rem;
+  font-weight: 500;
+  line-height: 0.8;
+  letter-spacing: -0.06em;
 }
 
-.sound-hole small { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; }
+.twelve-name { display: flex; flex-direction: column; align-items: flex-start; }
+.twelve-name strong { font-size: 1.4rem; letter-spacing: -0.04em; }
+.twelve-name small { margin-top: 8px; color: #aebc9b; font-size: 0.54rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; }
+
+.riff-meter {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  z-index: 1;
+  height: 22px;
+  display: flex;
+  align-items: end;
+  gap: 4px;
+}
+
+.riff-meter i { width: 9px; background: #aebc9b; }
+.riff-meter i:nth-child(1) { height: 5px; }
+.riff-meter i:nth-child(2) { height: 10px; }
+.riff-meter i:nth-child(3) { height: 7px; }
+.riff-meter i:nth-child(4) { height: 16px; }
+.riff-meter i:nth-child(5) { height: 5px; }
 
 .strings-visual > p {
   position: absolute;
   bottom: 25px;
   left: 28px;
+  color: #aebc9b;
   font-size: 0.59rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
+
+.strings-visual > p span { margin-right: 10px; color: #f3a47e; }
 
 .product--ctrld .product-visual { grid-column: 2; }
 .product--ctrld .product-copy { grid-column: 1; grid-row: 2; }
@@ -595,46 +625,100 @@ onUnmounted(() => {
   display: grid;
   place-items: center;
   padding: 8%;
-  background-color: var(--olive);
-  background-image: linear-gradient(rgba(241, 234, 220, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(241, 234, 220, 0.05) 1px, transparent 1px);
-  background-size: 36px 36px;
+  background: #1754eb;
 }
+
+.ctrld-rings,
+.ctrld-rings i {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+}
+
+.ctrld-rings { width: 520px; aspect-ratio: 1; top: -160px; right: -170px; }
+.ctrld-rings i:nth-child(1) { inset: 12%; }
+.ctrld-rings i:nth-child(2) { inset: 27%; }
+.ctrld-rings i:nth-child(3) { inset: 42%; }
+
+.pact-status-card {
+  position: absolute;
+  z-index: 2;
+  top: 7%;
+  right: 5%;
+  width: 190px;
+  padding: 19px 20px 17px;
+  color: #182235;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(9, 32, 88, 0.24);
+  transform: rotate(-5deg);
+}
+
+.pact-status-card small { display: block; margin-bottom: 7px; color: #687289; font-size: 0.5rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
+.pact-status-card strong { display: block; font-size: 1rem; }
+.pact-status-card > i { display: block; height: 4px; margin-top: 13px; overflow: hidden; border-radius: 10px; background: #dbe5ff; }
+.pact-status-card > i span { display: block; width: 72%; height: 100%; border-radius: inherit; background: #25c995; }
+
+.pact-visual:hover .pact-status-card { transform: rotate(-2deg) translateY(-4px); }
+
+.pact-status-card,
+.pact-paper { transition: transform 350ms ease; }
 
 .pact-paper {
   position: relative;
-  width: min(100%, 480px);
-  padding: 42px 38px 52px;
-  color: var(--ink);
-  background: var(--paper);
-  box-shadow: 18px 20px 0 rgba(30, 35, 26, 0.22);
-  transform: rotate(1.4deg);
-  transition: transform 350ms ease;
+  z-index: 1;
+  width: min(86%, 390px);
+  min-height: 490px;
+  padding: 34px 32px 38px;
+  overflow: hidden;
+  color: #182235;
+  background: #fff;
+  border-radius: 26px;
+  box-shadow: 18px 24px 0 rgba(9, 32, 88, 0.2);
+  transform: rotate(1.4deg) translateY(25px);
 }
 
-.pact-visual:hover .pact-paper { transform: rotate(0deg) translateY(-5px); }
+.pact-paper::after {
+  content: '';
+  position: absolute;
+  right: -120px;
+  bottom: -155px;
+  width: 350px;
+  aspect-ratio: 1;
+  border: 38px solid #dbe5ff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 50px #eff3ff;
+}
+
+.pact-visual:hover .pact-paper { transform: rotate(0deg) translateY(18px); }
 
 .pact-head {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--ink);
-  font-size: 0.58rem;
+  color: #687289;
+  font-size: 0.5rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
-.pact-paper > p {
-  padding: 44px 0;
-  font-family: 'Newsreader', Georgia, serif;
-  font-size: 1.9rem;
-  line-height: 1.15;
+.ctrld-logo {
+  position: relative;
+  z-index: 1;
+  margin-top: 105px;
+  font-size: 3.75rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.08em;
 }
 
-.pact-paper dl { border-top: 1px solid var(--rule); }
-.pact-paper dl div { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid var(--rule); font-size: 0.68rem; }
-.pact-paper dd { color: var(--soft-ink); }
-.signature { margin-top: 35px; font-family: 'Newsreader', Georgia, serif; font-size: 1.2rem; font-style: italic; }
-.pact-stamp { position: absolute; right: 32px; bottom: 28px; padding: 8px 12px 5px; border: 2px solid var(--red); color: var(--red); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; transform: rotate(-7deg); }
+.ctrld-logo span,
+.ctrld-definition em { color: #1754eb; font-style: normal; }
+.ctrld-pronunciation { position: relative; z-index: 1; margin-top: 12px; color: #687289; font-size: 0.62rem; font-weight: 500; }
+.ctrld-pronunciation i { margin: 0 5px; font-style: normal; }
+.ctrld-definition { position: relative; z-index: 1; margin-top: 34px; font-size: 1rem; font-weight: 600; line-height: 1.25; }
+.ctrld-definition b { display: block; margin-bottom: 10px; color: #1754eb; font-size: 0.7rem; }
+.ctrld-steps { position: absolute; z-index: 1; left: 32px; bottom: 28px; color: #687289; font-size: 0.51rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
 
 .unknown-visual {
   display: grid;
@@ -759,12 +843,16 @@ onUnmounted(() => {
   .product-meta { margin-bottom: 25px; }
   .product-visual { min-height: 440px; }
   .product-copy h3 { font-size: 3.8rem; }
-  .sound-hole { width: 190px; }
-  .sound-hole span { font-size: 4rem; }
-  .pact-paper { padding: 30px 24px 40px; }
-  .pact-paper > p { padding: 32px 0; font-size: 1.55rem; }
-  .pact-paper dl div { flex-direction: column; gap: 4px; }
-  .pact-stamp { right: 20px; bottom: 20px; }
+  .twelve-brand { gap: 12px; padding: 23px 20px 21px; }
+  .twelve-roman { font-size: 3.2rem; }
+  .twelve-name strong { font-size: 1rem; }
+  .twelve-name small { font-size: 0.42rem; }
+  .pact-paper { width: 88%; min-height: 390px; padding: 24px 21px 32px; }
+  .ctrld-logo { margin-top: 85px; font-size: 3.1rem; }
+  .ctrld-definition { margin-top: 27px; font-size: 0.86rem; }
+  .ctrld-steps { left: 21px; bottom: 20px; }
+  .pact-status-card { width: 152px; padding: 14px 15px 13px; }
+  .pact-status-card strong { font-size: 0.82rem; }
   .sealed-card { aspect-ratio: 1.1; }
   .manifesto { padding: 90px 0 100px; }
   .manifesto blockquote { font-size: 3.6rem; }
